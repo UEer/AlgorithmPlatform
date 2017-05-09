@@ -1,0 +1,148 @@
+
+a:hover{
+    text-decoration: none !important;
+}
+.mian{
+    background: #ededed;
+    height:100vh;
+    margin:0;
+    padding:0;
+}
+.span1{
+    margin:0;
+}
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    width:100%;
+    height:100vh;
+    background-color: #373d41;
+}
+.flex-container li>div{
+    text-align: center;
+
+}
+.flex-container li img{
+    margin-top:5px;
+    width:6vh;
+    height:6vh;
+}
+.navList{
+    margin-top:5vh;
+}
+.navList li{
+    width:20%;
+    float: left;
+    margin-bottom:10px;
+}
+.navList li .card{
+    width:95%;
+    margin:0 auto;
+    background: #fff;
+    height:45vh;
+    position: relative;
+    box-shadow: 2px 2px 2px #ccc;
+}
+.navList li .card .shawbox{
+    background:rgba(0,171,283,0.8);
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:45vh;
+    opacity: 0;
+    transition:all 1s;
+}
+.banner>li{
+    width:25%;
+    height:30vh;
+    float: left;
+}
+.banner .banner_icon{
+    float: left;
+    width:20%;
+    text-align: center;
+    margin-top:10px;
+}
+.banner .banner_icon img{
+    height: 5vh;
+    width:5vh
+}
+.banner .banner_title{
+    float: left;
+    width:80%;
+}
+.banner .banner_title h3{
+    text-indent: 1em;
+    font-size: 16px;
+    color:#444;
+    font-weight:600;
+
+}
+.banner .banner_title ol{
+    height:20vh;
+    color:#999;
+}
+.banner .banner_title .more{
+    color:rgb(0,171,283)
+}
+.navList li .card:hover .shawbox{
+    opacity: 1;
+}
+.btnHerf,.more{
+    position: relative;
+    margin:0 auto;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.more a{
+    color:#fff;
+    font-size: 16px;
+    display: block;
+    font-weight: 600;
+    padding:5px;
+}
+.navList li .card .btnHerf a{
+    background: #373d41;
+    color:#fff;
+    display: inline-block;
+    width:80%;
+    padding:5px ;
+    margin:5px;
+}
+.jumbotron{
+    margin:5px;
+    height:30vh;
+    background: #fff;
+    box-shadow: 2px 2px 2px #ccc;
+}
+.navList li .card>h3{
+    border-bottom: 1px solid #ccc;
+    color:#999;
+    padding:0 10px;
+}
+.navList li .card>.title{
+    font-size: 16px;
+    color:#444;
+}
+.navList li .card img{
+    height:20vh;
+    width:100%;
+}
+.navList li .card>p{
+    height:12vh;
+    padding:0 10px;
+}
+.navList li .card>.number{
+    padding:0 10px;
+}
+.flex-container li{
+    background-color: #373d41;
+    color:#fff;
+    width: 100%;
+    height: 10%;
+    border-bottom:1px solid #ccc;
+}

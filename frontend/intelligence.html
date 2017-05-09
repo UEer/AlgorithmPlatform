@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 101 Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/intel.css">
+</head>
+<style>
+
+</style>
+<body>
+    <div class="container-fluid">
+    <div class="navbar navbar-inverse margin0 borderBottom">
+        <div class="navbar-inner" >
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                 <a class="brand pull-left" href="#" style="padding:20px; ">Project name</a>
+                <div class="nav-collapse collapse" >
+                    <ul class="nav pull-left"  style="padding: 10px 0; ">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                        <li><a href="#">Link</a></li>
+                    </ul>
+                    <ul class="nav pull-right"  style="padding: 10px 0; ">
+                        <li><a href="#">登录</a></li>
+                        <li><a href="#">注册</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                更多
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                                <li><a tabindex="-1" href="#">内容一</a></li>
+                                <li><a tabindex="-1" href="#">内容一</a></li>
+                                <li><a tabindex="-1" href="#">内容一</a></li>
+                                <li><a tabindex="-1" href="#">内容一</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="page-header bannerImg">
+        <form action="">
+            <div class="banner">
+                <form action="">
+                    <div class="bannerbar"  >
+                        <input type="text" class="form-control" placeholder="搜索..." >
+                        <button type="button">
+                            <span class="glyphicon glyphicon-search">搜索</span>
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </form>
+
+    </div>
+        <div class="container">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist" style="padding-top:15px;">
+                <li role="presentation" class="active presentation"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">文档</a></li>
+                <li role="presentation" class="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">设置</a></li>
+                <li role="presentation" class="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">设置</a></li>
+                <li role="presentation" class="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">设置</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="home">
+                    <div class="row-fluid">
+                        <div class="span3">
+                            <!--Sidebar content-->
+                            <div class="panel-group" id="accordion"></div>
+                        </div>
+                        <div class="span9">
+                            <ol class="breadcrumb" >
+                                <li class="one">文档</li>
+                                <li class="two">标题1</li>
+                                <li class="three active">list1</li>
+                            </ol>
+                            <!--Body content-->
+                        </div>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="profile">222</div>
+                <div role="tabpanel" class="tab-pane" id="messages">111</div>
+                <div role="tabpanel" class="tab-pane" id="settings">444</div>
+            </div>
+
+        </div>
+
+</div>
+<!--<form class="navbar-form navbar-left" role="search">-->
+    <!--<div class="form-group">-->
+        <!--<input type="text" class="form-control" />-->
+    <!--</div> <button type="submit" class="btn btn-default">Submit</button>-->
+<!--</form>-->
+</body>
+<script>
+    $(document).ready(function(){
+      var mockData=[
+          {title:'标题1'},
+          {title:'标题2'},
+          {title:'标题3'},
+          {title:'标题4'},
+          {title:'标题5'},
+          {title:'标题6'},
+          {title:'标题7'},
+          {title:'标题8'},
+      ];
+
+      var str='';
+      var strs='';
+        $.each(mockData,function(i,obj){
+            strs="<li>list1</li><li>list2</li><li>list3</li><li>list4</li><li>list5</li>";
+            str+="<div class='panel panel-default'> <div class='panel-heading'> <h4 class='panel-title'> <a data-toggle='collapse' class='toogle listData' data-parent='#accordion' href='#collapseOne"+i+"'>"+obj.title+"</a> </h4> </div> <div id='collapseOne"+i+"' class='panel-collapse collapse'> <ul class='panel-body'>"+strs+"</ul> </div> </div>";
+
+        });
+
+        $('#accordion').append(str);
+        $('#collapseOne0').addClass('in');
+        $('.presentation').click(function () {
+            $('.breadcrumb .one').html($(this).children().html())
+        });
+        $('#accordion .listData').click(function () {
+            $('.breadcrumb .three').html('')
+            $('.breadcrumb .two').html($(this).html())
+        });
+        $('#accordion .panel-body li').click(function () {
+            $('.breadcrumb .three').html($(this).html())
+        })
+
+    });
+</script>
+</html>

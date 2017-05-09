@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <div class="container-fluid mian">
+
+        <div style="width:10vh;float: left">
+            <ul class="flex-container">
+                <!--<li>-->
+                    <!--<div><img src="" alt=""></div>-->
+                    <!--<div >首页</div>-->
+                <!--</li>-->
+            </ul>
+        </div>
+        <div style="height:100vh;margin-left:10vh;overflow-y: auto" >
+            <div style="width:100%;">
+                <div class="container" style="padding:5vh 0;">
+                    <div class="jumbotron">
+                        <ul class="banner">
+                            <li>
+                                <div class="banner_icon">
+                                    <img src="#" alt="">
+                                </div>
+                                <div class="banner_title">
+                                    <h3>最新功能</h3>
+                                    <ol>
+                                        <li>
+                                           深度学习DNN算法
+                                        </li>
+                                        <li>
+                                            深度学习DNN算法
+                                        </li>
+                                    </ol>
+                                    <div><a href="" class="more" >更多</a></div>
+                                </div>
+
+                            </li>
+                            <!-->
+                            <li>
+                                <div class="banner_icon">
+                                    <img src="#" alt="">
+                                </div>
+                                <div class="banner_title">
+                                    <h3>最新功能</h3>
+                                    <ol>
+                                        <li>
+                                            深度学习DNN算法
+                                        </li>
+                                        <li>
+                                            深度学习DNN算法
+                                        </li>
+                                    </ol>
+                                    <div><a href="" class="more" >更多</a></div>
+                                </div>
+
+                            </li>
+                            <!-->
+                            <li>
+                                <div class="banner_icon">
+                                    <img src="#" alt="">
+                                </div>
+                                <div class="banner_title">
+                                    <h3>最新功能</h3>
+                                    <ol>
+                                        <li>
+                                            深度学习DNN算法
+                                        </li>
+                                        <li>
+                                            深度学习DNN算法
+                                        </li>
+                                    </ol>
+                                    <div><a href="" class="more" >更多</a></div>
+                                </div>
+
+                            </li>
+                            <!-->
+                            <li>
+                                <div class="banner_icon">
+                                    <img src="#" alt="">
+                                </div>
+                                <div class="banner_title">
+                                    <h3>最新功能</h3>
+                                    <ol>
+                                        <li>
+                                            深度学习DNN算法
+                                        </li>
+                                        <li>
+                                            深度学习DNN算法
+                                        </li>
+                                    </ol>
+                                    <div><a href="" class="more" >更多</a></div>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                    <ul class="navList">
+                        <li>
+                            <div class="card" style="background: #00abee">
+                                <div class="more">
+                                    <img src="" style="height:15vh;width: 15vh;" alt="">
+                                    <div><a href=""> 新建空白实验</a> </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--<li>-->
+                            <!--<div class="card">-->
+                                <!--<h3>基础</h3>-->
+                                <!--<div class="title" style=" " >人口普查案例</div>-->
+                                <!--<img src=""  alt="">-->
+                                <!--<p >综合人口调查综合人口调查综合人口调查综合人口调查综合人口调查综合</p>-->
+                                <!--<div class="number">23434位用户</div>-->
+                                <!--<div class="shawbox">-->
+                                    <!--<div class="btnHerf">-->
+                                        <!--<div><a href="#">按钮1</a></div>-->
+                                        <!--<div><a href="#">按钮2</a></div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+
+                        <!--</li>-->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function(){
+        var mockData=[
+            {title:'标题1'},
+            {title:'标题2'},
+            {title:'标题3'},
+            {title:'标题4'},
+            {title:'标题5'},
+            {title:'标题6'},
+            {title:'标题7'},
+            {title:'标题8'},
+        ];
+        var mockData1=[
+            {title:'首页'},
+            {title:'实验'},
+            {title:'数据源'},
+            {title:'组件'},
+            {title:'模型'},
+            {title:'设置'},
+            {title:'工作空间'},
+            {title:'简体中文'},
+            {title:'简体中文'},
+            {title:'帮助'},
+        ];
+        var str='';
+        $.each(mockData,function(i,obj){
+            str+="<li> <div class='card'> <h3>"+obj.title+"</h3> <div class='title'>人口普查案例</div> <img src=''  alt=''> <p >综合人口调查综合人口调查综合人口调查综合人口调查综合人口调查综合</p> <div class='number'>23434位用户</div> <div class='shawbox'> <div class='btnHerf'> <div><a href='intelligence.html'>按钮1</a></div> <div><a href='#'>按钮2</a></div> </div> </div> </div> </li>"
+
+        });
+        $('.navList').append(str);
+
+        var str1='';
+        $.each(mockData1,function(i,obj){
+            str1+=" <li> <div><img src='' alt=''></div> <div >"+obj.title+"</div> </li>"
+
+        });
+        $('.flex-container').append(str1);
+
+    });
+</script>
+</html>
