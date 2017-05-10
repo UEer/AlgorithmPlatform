@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/reset.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<style>
+    .labelImg{
+        display: block;
+        margin-left: 40px;
+        float: left;
+        margin-top: 5px;
+    }
+    .titleupload p{
+        background: #e0e0e0;
+        min-height: 30vh;
+        font-size:16px;
+        padding:10px;
+        box-sizing: content-box;
+    }
+    .imgupload{
+        width: 45vw;
+        background: #fff;
+        margin-left: 40px;
+        min-height: 30vw;
+        box-shadow: 2px 2px 2px #999;
+
+    }
+    .imgupload img{
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .saveBtn{
+        padding: 10px;
+        text-align: right;
+    }
+    .saveBtn button{
+        display: inline-block;
+        background: #08c;
+        padding: 8px 15px;
+        border-radius: 2px;
+        color: #fff;
+        border:none;
+    }
+    .titleupload{
+        width: 38vw;
+        margin-right: 40px;
+        height: 38vw;
+        float: right;
+    }
+    .titleupload h3{
+        font-size: 24px;
+    }
+    .back{
+        padding: 10px;
+        background: #fff;
+        text-align: right;
+    }
+    .title{
+        font-size: 30px;
+        padding:10px 20px;
+        text-align: center;
+    }
+    .upload{
+        position: relative;
+        display: inline-block;
+    }
+    .upload button{
+        position: absolute;
+        top:0;
+        right:0;
+        height: 30px;
+        width: 80px;
+        border: none;
+        background-color: transparent;
+        outline: none;
+        background: url(img/upload.png) no-repeat 45px;
+    }
+    .fileupload{
+        position: absolute;
+        top:0;
+        left:0;
+        width:100% !important;
+        opacity: 0;
+    }
+    .textupload{
+        width:350px;
+        height: 40px;
+        line-height:40px;
+    }
+</style>
+<body>
+<div class="container-fluid mian">
+
+    <div style="width:10vh;float: left">
+        <ul class="flex-container"></ul>
+    </div>
+    <div class="loader" style="height:100vh;margin-left:10vh;overflow-y: auto;" >
+        <div class="container-fluid mian">
+            <div class="back"><a href="home.html" class="btn-back">返回上一级</a> </div>
+            <h3 class="title">图片标签化</h3>
+            <!--<form action="#" method="get" enctype="application/x-www-form-urlencoded">-->
+            <div>
+                <label class="labelImg"> 上传图片：</label>
+                <div class="upload">
+                    <input name='file' type='file' class="fileupload" id='iptfileupload'   onchange='shower()' value='' />
+                    <input type='text' class="textupload" placeholder="浏览..."  value='' id="text"/>
+                    <button onclick="show()"></button>
+                </div>
+            </div>
+
+            <!--</form>-->
+            <div style="float: left">
+                <h3 style="margin-left:40px;font-size: 24px;">解析图片</h3>
+                <div class="imgupload"><img src='img/add.png' alt='' id='img' /></div>
+                <div class="saveBtn"><button onclick="saveBtn()">提交图片</button></div>
+            </div>
+
+            <div class="titleupload">
+                <h3>解析文字</h3>
+                <p >
+                    解析的文字解析的文字解析的文字解析的文字解析的文字解析的文字
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var mockData1=[
+        {title:'首页'},
+        {title:'实验'},
+        {title:'数据源'},
+        {title:'组件'},
+        {title:'模型'},
+        {title:'设置'},
+        {title:'工作空间'},
+        {title:'简体中文'},
+        {title:'简体中文'},
+        {title:'帮助'}
+    ];
+    var str1='';
+    $.each(mockData1,function(i,obj){
+        str1+=" <li> <div><img src='' alt=''></div> <div >"+obj.title+"</div> </li>"
+
+    });
+
+        $('.flex-container').append(str1);
+    function getPath(obj,fileQuery,transImg) {
+        var imgSrc = '', imgArr = [], strSrc = '' ;
+        if(window.navigator.userAgent.indexOf("MSIE")>=1){ // IE浏览器判断
+            if(obj.select){
+                obj.select();
+                var path=document.selection.createRange().text;
+                alert(path) ;
+                obj.removeAttribute("src");
+                imgSrc = fileQuery.value ;
+                imgArr = imgSrc.split('.') ;
+                strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
+                if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
+                    obj.setAttribute("src",transImg);
+                    obj.style.filter=
+                        "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+path+"', sizingMethod='scale');"; // IE通过滤镜的方式实现图片显示
+                }else{
+                    throw new Error('File type Error! please image file upload..');
+                }
+            }else{
+                imgSrc = fileQuery.value ;
+                imgArr = imgSrc.split('.') ;
+                strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
+                if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
+                    obj.src = fileQuery.value ;
+                }else{
+                    throw new Error('File type Error! please image file upload..') ;
+                }
+
+            }
+
+        } else{
+            var file =fileQuery.files[0];
+            var reader = new FileReader();
+            reader.onload = function(e){
+                imgSrc = fileQuery.value ;
+                imgArr = imgSrc.split('.') ;
+                strSrc = imgArr[imgArr.length - 1].toLowerCase() ;
+                if(strSrc.localeCompare('jpg') === 0 || strSrc.localeCompare('jpeg') === 0 || strSrc.localeCompare('gif') === 0 || strSrc.localeCompare('png') === 0){
+                    obj.setAttribute("src", e.target.result) ;
+                }else{
+                    throw new Error('File type Error! please image file upload..') ;
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+    function show(){
+        //以下即为完整客户端路径
+        var file_img=document.getElementById("img"),
+            iptfileupload = document.getElementById('iptfileupload');
+            getPath(file_img,iptfileupload,file_img);
+    }
+    function shower() {
+        $('#text').val($('#iptfileupload').val());
+    }
+    function saveBtn() {
+//        $('#title').append("<p>"+mockData.message+"</p>")
+    }
+</script>
+</html>

@@ -22,9 +22,9 @@
                 <!--</li>-->
             </ul>
         </div>
-        <div style="height:100vh;margin-left:10vh;overflow-y: auto" >
+        <div class="loader" style="height:100vh;margin-left:10vh;overflow-y: auto;" >
             <div style="width:100%;">
-                <div class="container" style="padding:5vh 0;">
+                <div class="container" style="padding:5vh ;">
                     <div class="jumbotron">
                         <ul class="banner">
                             <li>
@@ -139,15 +139,15 @@
 </body>
 <script>
     $(document).ready(function(){
-        var mockData=[
-            {title:'标题1'},
-            {title:'标题2'},
-            {title:'标题3'},
-            {title:'标题4'},
-            {title:'标题5'},
-            {title:'标题6'},
-            {title:'标题7'},
-            {title:'标题8'},
+        var mockData =[
+            {title:'图片标签化',href:'Picturelabel.html'},
+            {title:'标题2',href:'intelligence.html'},
+            {title:'标题3',href:'intelligence.html'},
+            {title:'标题4',href:'intelligence.html'},
+            {title:'标题5',href:'intelligence.html'},
+            {title:'标题6',href:'intelligence.html'},
+            {title:'标题7',href:'intelligence.html'},
+            {title:'标题8',href:'intelligence.html'},
         ];
         var mockData1=[
             {title:'首页'},
@@ -163,7 +163,7 @@
         ];
         var str='';
         $.each(mockData,function(i,obj){
-            str+="<li> <div class='card'> <h3>"+obj.title+"</h3> <div class='title'>人口普查案例</div> <img src=''  alt=''> <p >综合人口调查综合人口调查综合人口调查综合人口调查综合人口调查综合</p> <div class='number'>23434位用户</div> <div class='shawbox'> <div class='btnHerf'> <div><a href='intelligence.html'>按钮1</a></div> <div><a href='#'>按钮2</a></div> </div> </div> </div> </li>"
+            str+="<li> <div class='card'> <h3>"+obj.title+"</h3> <div class='title'>人口普查案例</div> <img src=''  alt=''> <p >综合人口调查综合人口调查综合人口调查综合人口调查综合人口调查综合</p> <div class='number'>23434位用户</div> <div class='shawbox'> <div class='btnHerf'> <div><a href='intelligence.html'>按钮1</a></div> <div><a href='"+obj.href+"' id='loader"+i+"'>按钮2</a></div> </div> </div> </div> </li>"
 
         });
         $('.navList').append(str);
@@ -174,6 +174,7 @@
 
         });
         $('.flex-container').append(str1);
+
 
     });
 </script>
