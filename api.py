@@ -11,17 +11,6 @@ app.config['UPLOAD_FOLDER'] = os.getcwd()
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 
-# html = '''
-#     <!DOCTYPE html>
-#     <title>Upload File</title>
-#     <h1>图片上传</h1>
-#     <form method=post enctype=multipart/form-data>
-#          <input type=file name=file>
-#          <input type=submit value=上传>
-#     </form>
-#     '''
-
-
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
@@ -50,9 +39,3 @@ def upload_file():
 
 if __name__ == '__main__':
     app.run('0.0.0.0',port=8888)
-#api 测试
-# url = 'http://httpbin.org/post'
-# files = {'file': open('report.xls', 'rb')}
-#
-# r = requests.post(url, files=files)
-# r.text
